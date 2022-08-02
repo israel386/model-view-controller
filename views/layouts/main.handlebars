@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technically Speaking</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<div class="wrapper">
+  <header>
+    <h1>
+      <a href="/">Tech Blog</a>
+    </h1>
+    <nav>
+      {{#if loggedIn}}
+      <a href="/dashboard">dashboard</a>
+      <button id="logout" class="btn-no-style">logout</button>
+      {{else}}
+      <a href="/login">login</a>
+      {{/if}}
+    </nav>
+  </header>
+
+  <main>
+    {{{ body }}}
+  </main>
+
+  <footer class="footer rows pb-2">
+    Thanks for visiting!
+  </footer>
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+</body>
+
+</html>
